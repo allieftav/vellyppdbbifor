@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMK Bina Informatika - Unggul dalam Prestasi, Berkarakter Islami</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3em 0 2em;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,100 100,0 200,30 300,10 400,50 500,20 600,40 700,10 800,30 900,0 1000,50 1000,100"/></svg>') repeat-x;
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out;
+        }
+
+        header h2 {
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            padding: 1em 0;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.8em 1.5em;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Running Text */
+        .running-text-container {
+            background: var(--gradient-secondary);
+            padding: 1em 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .running-text {
+            white-space: nowrap;
+            animation: scroll-text 20s linear infinite;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        @keyframes scroll-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4em 2em;
+            text-align: center;
+            background: var(--bg-white);
+            position: relative;
+        }
+
+        .hero img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 2em;
+            transition: transform 0.3s ease;
+        }
+
+        .hero img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .hero h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 1em;
+            position: relative;
+        }
+
+        .hero h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .hero ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 2em auto;
+            text-align: left;
+        }
+
+        .hero li {
+            background: var(--bg-light);
+            margin: 1em 0;
+            padding: 1.2em;
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hero li::before {
+            content: '✓';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--secondary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .hero li:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .promo-badge {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 1em 2em;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 2em auto;
+            display: inline-block;
+            animation: pulse 2s infinite;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 4em 2em;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 1.5em;
+            position: relative;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2em;
+        }
+
+        /* Program Studies */
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2em;
+            margin-top: 3em;
+        }
+
+        .program {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 2em;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .program::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .program:hover::before {
+            transform: scaleX(1);
+        }
+
+        .program:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program.focused {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--primary-color);
+            border: 3px solid var(--primary-color);
+        }
+
+        .program img {
+            width: 100%;
+            max-width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .program:hover img {
+            transform: scale(1.1);
+        }
+
+        .program h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 1em;
+            font-weight: 600;
+        }
+
+        .program p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        .game-link {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8em 1.5em;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-link::before {
+            content: '🎮';
+            margin-right: 0.5em;
+        }
+
+        .game-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* DSP Logo */
+        .dsp-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2em;
+            background: var(--bg-white);
+        }
+
+        .animated-dsp {
+            animation: float 3s ease-in-out infinite;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Extracurricular */
+        .extracurricular-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .extracurricular {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 2em;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .extracurricular::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .extracurricular:hover::before {
+            opacity: 0.1;
+        }
+
+        .extracurricular:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .extracurricular svg {
+            margin-bottom: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        .extracurricular:hover svg {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .extracurricular h3 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 0.8em;
+            font-weight: 600;
+        }
+
+        .extracurricular p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--bg-white);
+            padding: 4em 2em;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-info h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 2em;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin: 1em 0;
+            color: var(--text-secondary);
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 4em 2em;
+            background: var(--bg-white);
+        }
+
+        .map-section iframe {
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .map-section iframe:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 3em 2em 2em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--accent-color);
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2em;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #backToTop:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Registration Form */
+        .registration-form {
+            background: var(--bg-white);
+            padding: 3em 2em;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            margin: 2em auto;
+            max-width: 600px;
+        }
+
+        .registration-form input,
+        .registration-form select {
+            width: 100%;
+            padding: 1em;
+            margin: 0.8em 0;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .registration-form input:focus,
+        .registration-form select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1em 2em;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1em;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Receipt Styles */
+        #struk {
+            display: none;
+            opacity: 0;
+            margin-top: 2em;
+            background: var(--bg-white);
+            padding: 2em;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            border: 3px solid var(--secondary-color);
+            transition: all 0.5s ease;
+        }
+
+        #struk.show {
+            display: block;
+            opacity: 1;
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5em; }
+            header h2 { font-size: 1.8em; }
+            .content h2 { font-size: 2em; }
+            .program-list { grid-template-columns: 1fr; }
+            .extracurricular-list { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .hero { padding: 2em 1em; }
+            .content { padding: 2em 1em; }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Program Focus Animation */
+        @keyframes focusGlow {
+            0%, 100% { box-shadow: 0 0 20px var(--primary-color); }
+            50% { box-shadow: 0 0 40px var(--primary-color); }
+        }
+
+        .program.focused {
+            animation: focusGlow 2s ease-in-out 3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di PPDB</h1>
+        <h2>SMK Bina Informatika</h2>
+        <p>
+            <i class="fas fa-graduation-cap"></i> Unggul dalam Prestasi, Berkarakter Islami
+        </p>
+    </header>
+
+    <nav>
+        <a href="#beranda"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#tentang-kami"><i class="fas fa-info-circle"></i> Tentang Kami</a>
+        <a href="#program-studi"><i class="fas fa-book"></i> Program Studi</a>
+        <a href="#ekstrakurikuler"><i class="fas fa-users"></i> Ekstrakurikuler</a>
+        <a href="#pendaftaran"><i class="fas fa-edit"></i> Pendaftaran</a>
+        <a href="#kontak"><i class="fas fa-phone"></i> Kontak</a>
+        <a href="#lokasi"><i class="fas fa-map-marker-alt"></i> Lokasi</a>
+    </nav>
+
+    <div class="running-text-container">
+        <p class="running-text">
+            🎓 Pendaftaran Siswa Baru Tahun Ajaran 2025/2026 telah dibuka! 📚 Segera daftarkan diri Anda dan raih masa depan gemilang bersama kami! 🏆 Beasiswa tersedia untuk siswa berprestasi. 💫 Jangan lewatkan kesempatan ini!
+        </p>
+    </div>
+
+    <div class="hero" id="beranda" data-aos="fade-up">
+
+        <h2><i class="fas fa-school"></i> Sekolah Kejuruan dengan Fasilitas Modern</h2>
+        <p>
+            Kami menyediakan lingkungan belajar yang kondusif dan fasilitas lengkap untuk mendukung perkembangan potensi siswa dalam era digital.
+        </p>
+        <h2 style="margin-top: 2em;"><i class="fas fa-star"></i> Mengapa Memilih Sekolah Kami?</h2>
+        <ul>
+            <li><i class="fas fa-chalkboard-teacher"></i> Tenaga pengajar profesional dan berpengalaman dengan sertifikasi internasional</li>
+            <li><i class="fas fa-laptop-code"></i> Kurikulum yang relevan dengan perkembangan teknologi dan industri 4.0</li>
+            <li><i class="fas fa-futbol"></i> Kegiatan ekstrakurikuler yang beragam untuk pengembangan soft skills</li>
+            <li><i class="fas fa-shield-alt"></i> Lingkungan sekolah yang aman, nyaman, dan kondusif untuk belajar</li>
+            <li><i class="fas fa-handshake"></i> Kerjasama dengan industri untuk program magang dan penempatan kerja</li>
+        </ul>
+        <div class="promo-badge">
+            <i class="fas fa-gift"></i> <strong>Cukup Bayar Rp.400.000 untuk Pembayaran Formulir dan SPP bulan Juli!</strong>
+        </div>
+    </div>
+
+    <div class="content" id="tentang-kami" data-aos="fade-right">
+        <h2><i class="fas fa-building"></i> Tentang Kami</h2>
+        <p>
+            SMK Bina Informatika merupakan lembaga pendidikan kejuruan yang berkomitmen tinggi pada pengembangan ilmu pengetahuan dan teknologi, serta penanaman nilai-nilai Islami kepada seluruh siswa. Berdiri sejak tahun 2010, sekolah kami telah mencetak ribuan lulusan yang sukses berkarir di berbagai bidang teknologi informasi.
+        </p>
+        <p>
+            Dengan tenaga pengajar yang kompeten dan bersertifikat, fasilitas laboratorium yang terus diperbarui, serta kurikulum yang disesuaikan dengan kebutuhan industri, kami siap mencetak lulusan yang tidak hanya siap kerja tetapi juga mampu menciptakan lapangan kerja sendiri di era digital ini.
+        </p>
+    </div>
+
+    <div class="dsp-container">
+        <img src="dsp.jpg" alt="Logo DSP" class="animated-dsp" width="300px" />
+    </div>
+
+    <div class="content" id="program-studi">
+        <h2><i class="fas fa-graduation-cap"></i> Program Studi Unggulan</h2>
+        <p>Pilih program studi sesuai dengan minat dan bakat Anda. Semua program dilengkapi dengan laboratorium modern dan instruktur berpengalaman.</p>
+        <div class="program-list">
+            <div class="program" data-aos="zoom-in" onclick="focusProgram(this)">
+                <img src="rpl.jpg" alt="Rekayasa Perangkat Lunak">
+                <h3><i class="fas fa-code"></i> Rekayasa Perangkat Lunak</h3>
+                <p>
+                    Belajar membuat dan mengembangkan aplikasi mobile, web, dan desktop dengan teknologi terkini seperti React, Flutter, dan Node.js. Program ini mempersiapkan siswa menjadi programmer handal yang siap bekerja di industri teknologi.
+                </p>
+                <p><strong>Prospek Karir:</strong> Software Developer, Mobile App Developer, Web Developer, System Analyst</p>
+                <div style="margin-top: 1em; padding: 1em; background: var(--bg-light); border-radius: 10px;">
+                    <p><strong>🎮 Game Seru Hasil Karya Siswa SMK!</strong></p>
+                    <p>Mainkan langsung game yang dibuat oleh siswa jurusan RPL:</p>
+                    <a href="game/index.html" class="game-link">Mainkan Velly Game</a>
+                </div>
+            </div>
+            
+            <div class="program" data-aos="zoom-in" data-aos-delay="150" onclick="focusProgram(this)">
+                <img src="tkj.jpg" alt="Teknik Komputer dan Jaringan">
+                <h3><i class="fas fa-network-wired"></i> Teknik Komputer dan Jaringan</h3>
+                <p>
+                    Mempelajari instalasi, konfigurasi, dan maintenance jaringan komputer, server, dan perangkat keras. Termasuk cybersecurity, cloud computing, dan IoT (Internet of Things).
+                </p>
+                <p><strong>Prospek Karir:</strong> Network Administrator, IT Support, Network Engineer, Cybersecurity Specialist</p>
+            </div>
+            
+            <div class="program" data-aos="zoom-in" data-aos-delay="300" onclick="focusProgram(this)">
+                <img src="mm.jpg" alt="Multimedia" />
+                <h3><i class="fas fa-camera"></i> Multimedia</h3>
+                <p>
+                    Desain grafis, animasi 2D/3D, video editing, fotografi, dan produksi konten digital kreatif. Menggunakan software profesional seperti Adobe Creative Suite, Blender, dan After Effects.
+                </p>
+                <p><strong>Prospek Karir:</strong> Graphic Designer, Video Editor, Animator, Content Creator, Digital Marketing Specialist</p>
+            </div>
+            
+            <div class="program" data-aos="zoom-in" data-aos-delay="450" onclick="focusProgram(this)">
+                <img src="otkp.jpg" alt="Otomatisasi dan Tata Kelola Perkantoran" />
+                <h3><i class="fas fa-briefcase"></i> Otomatisasi dan Tata Kelola Perkantoran</h3>
+                <p>
+                    Menguasai administrasi perkantoran modern, otomatisasi dokumen, manajemen database, digital marketing, e-commerce, dan kewirausahaan digital.
+                </p>
+                <p><strong>Prospek Karir:</strong> Administrative Assistant, Digital Marketing Manager, E-commerce Manager, Entrepreneur</p>
+            </div>
+            
+            <div class="program" data-aos="zoom-in" data-aos-delay="600" onclick="focusProgram(this)">
+                <img src="pkm.jpg" alt="Perbankan dan Keuangan Mikro" />
+                <h3><i class="fas fa-university"></i> Perbankan dan Keuangan Mikro</h3>
+                <p>
+                    Program studi yang fokus pada pengelolaan keuangan, perbankan, investasi, dan lembaga keuangan mikro. Mempelajari analisis kredit, manajemen risiko, dan teknologi financial (fintech).
+                </p>
+                <p><strong>Prospek Karir:</strong> Bank Teller, Credit Analyst, Financial Advisor, Fintech Specialist, Microfinance Manager</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bagian Ekstrakurikuler -->
+    <div class="content" id="ekstrakurikuler" data-aos="fade-left">
+        <h2><i class="fas fa-users"></i> Ekstrakurikuler</h2>
+        <p>Kembangkan bakat dan minat Anda melalui berbagai kegiatan ekstrakurikuler yang kami sediakan. Setiap kegiatan dibimbing oleh instruktur berpengalaman.</p>
+        <div class="extracurricular-list">
+
+            <!-- Pramuka -->
+            <div class="extracurricular" data-aos="zoom-in" data-aos-delay="100">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm3 11.5l-6 2.5 2.5-6 6-2.5-2.5 6z" />
+                </svg>
+                <h3>Pramuka</h3>
+                <p>
+                    Pengembangan karakter, kepemimpinan, dan keterampilan hidup melalui kegiatan pramuka yang menyenangkan dan edukatif.
+                </p>
+            </div>
+
+            <!-- Futsal -->
+            <div class="extracurricular" data-aos="zoom-in" data-aos-delay="200">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#ff9800" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm2.2 14.5l-2.2-1.5-2.2 1.5.8-2.5-2-1.5h2.5l.9-2.5.9 2.5H16l-2 1.5.8 2.5z" />
+                </svg>
+                <h3>Futsal</h3>
+                <p>
+                    Latihan fisik dan kerja sama tim dalam olahraga futsal. Tim futsal sekolah rutin mengikuti kompetisi antar sekolah.
+                </p>
+            </div>
+
+            <!-- PMR -->
+            <div class="extracurricular" data-aos="zoom-in" data-aos-delay="300">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#e53935" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 13h-4v4h-6v-4H5v-6h4V5h6v4h4v6z" />
+                </svg>
+                <h3>PMR (Palang Merah Remaja)</h3>
+                <p>
+                    Meningkatkan kepedulian sosial dan pengetahuan tentang dunia medis serta pertolongan pertama pada kecelakaan.
+                </p>
+            </div>
+
+            <!-- Paskibra -->
+            <div class="extracurricular" data-aos="zoom-in" data-aos-delay="400">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#1976d2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 2h2v20H4V2zm4 2h10v6H8V4zm0 8h10v6H8v-6z" />
+                </svg>
+                <h3>Paskibra</h3>
+                <p>
+                    Berlatih baris berbaris (PBB), kedisiplinan, dan nasionalisme. Anggota Paskibra sering menjadi petugas upacara resmi.
+                </p>
+            </div>
+
+            <!-- Seni Tari -->
+            <div class="extracurricular" data-aos="zoom-in" data-aos-delay="500">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#9c27b0" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-1 6h2l1 5h4l-5 5-2-4-3 3-1-1 4-4h-3l3-4z" />
+                </svg>
+                <h3>Seni Tari</h3>
+                <p>
+                    Belajar seni tari tradisional dan modern, mengekspresikan kreativitas melalui gerakan yang indah dan bermakna.
+                </p>
+            </div>
+
+            <!-- Robotika -->
+            <div class="extracurricular" data-aos="zoom-in" data-aos-delay="600">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="#607d8b" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a2 2 0 0 1 2 2v2h3a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-3v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-2H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3V4a2 2 0 0 1 2-2h4z" />
+                </svg>
+                <h3>Robotika</h3>
+                <p>
+                    Eksplorasi teknologi robotika, programming, dan IoT. Siswa dapat mengikuti kompetisi robotika tingkat nasional.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bagian Pendaftaran -->
+    <div class="content" id="pendaftaran" data-aos="fade-up">
+        <h2><i class="fas fa-edit"></i> Pendaftaran Siswa Baru</h2>
+        <p>Daftarkan diri Anda sekarang dan bergabunglah dengan keluarga besar SMK Bina Informatika!</p>
+        
+        <div class="registration-form">
+            <h3>Form Pendaftaran Online</h3>
+            <form onsubmit="return validasiForm()" method="POST">
+                <input type="text" id="nama" placeholder="Nama Lengkap *" required>
+                <input type="text" id="nisn" placeholder="NISN *" required>
+                <input type="email" id="email" placeholder="Email *" required>
+                <input type="tel" id="telp" placeholder="Nomor Telepon *" required>
+                <input type="date" id="tglLahir" required>
+                <select id="jenisKelamin" required>
+                    <option value="">Pilih Jenis Kelamin *</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                <select id="program" required>
+                    <option value="">Pilih Program Studi *</option>
+                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                    <option value="Teknik Komputer dan Jaringan">Teknik Komputer dan Jaringan</option>
+                    <option value="Multimedia">Multimedia</option>
+                    <option value="Otomatisasi dan Tata Kelola Perkantoran">Otomatisasi dan Tata Kelola Perkantoran</option>
+                    <option value="Perbankan dan Keuangan Mikro">Perbankan dan Keuangan Mikro</option>
+                </select>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                </button>
+            </form>
+            
+            <div id="struk"></div>
+        </div>
+    </div>
+
+    <div class="contact-info" id="kontak" data-aos="fade-up">
+        <h2><i class="fas fa-phone"></i> Kontak Kami</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2em; margin-top: 2em;">
+            <div>
+                <i class="fas fa-map-marker-alt" style="font-size: 2em; color: var(--primary-color); margin-bottom: 0.5em;"></i>
+                <h3>Alamat</h3>
+                <p>Jl. RE. Abdullah No.1, RT.02/RW.01<br>Pasir Jaya, Bogor Barat<br>Kota Bogor, Jawa Barat</p>
+            </div>
+            <div>
+                <i class="fas fa-envelope" style="font-size: 2em; color: var(--primary-color); margin-bottom: 0.5em;"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:smkbinainformatika@gmail.com">smkbinainformatika@gmail.com</a></p>
+            </div>
+            <div>
+                <i class="fas fa-phone" style="font-size: 2em; color: var(--primary-color); margin-bottom: 0.5em;"></i>
+                <h3>Telepon</h3>
+                <p><a href="tel:+6289617354862">+62 896-1735-4862</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content map-section" id="lokasi" data-aos="fade-up">
+        <h2><i class="fas fa-map-marker-alt"></i> Lokasi Sekolah</h2>
+        <p>SMK Bina Informatika strategis terletak di Bogor Barat, mudah diakses dengan transportasi umum.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3375518595976!2d106.768786!3d-6.5894822999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5b2b62c63c5%3A0xaaa001c8a60dcb3!2sJl.%20RE.%20Abdullah%20No.1%2C%20Pasir%20Jaya%2C%20Kec.%20Bogor%20Barat%2C%20Kota%20Bogor%2C%20Jawa%20Barat%2016154!5e0!3m2!1sid!2sid!4v1715000000000!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2em;">
+            <h3><i class="fas fa-graduation-cap"></i> SMK Bina Informatika</h3>
+            <p style="margin: 1em 0;">Membangun Generasi Digital yang Berkarakter</p>
+            <div style="display: flex; justify-content: center; gap: 2em; margin: 2em 0; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/smkbinainformatika?igsh=MW92eTZpcGp3NGJ6MA==" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram" style="font-size: 1.5em; margin-right: 0.5em;"></i>Instagram
+                </a>
+                <a href="#" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook" style="font-size: 1.5em; margin-right: 0.5em;"></i>Facebook
+                </a>
+                <a href="#" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube" style="font-size: 1.5em; margin-right: 0.5em;"></i>YouTube
+                </a>
+            </div>
+            <p style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1em; margin-top: 2em;">
+                Copyright © 2025 Alliefta XI RPL | SMK Bina Informatika
+            </p>
+        </div>
+    </footer>
+
+    <a href="#" id="backToTop" title="Kembali ke Atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS Animation Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Back to top button functionality
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Program focus functionality
+        function focusProgram(element) {
+            // Remove focus from all programs
+            document.querySelectorAll('.program').forEach(program => {
+                program.classList.remove('focused');
+            });
+            
+            // Add focus to clicked program
+            element.classList.add('focused');
+            
+            // Smooth scroll to the program
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            
+            // Remove focus after animation
+            setTimeout(() => {
+                element.classList.remove('focused');
+            }, 6000);
+        }
+
+        // Form validation and submission
+        function validasiForm() {
+            const nama = document.getElementById('nama').value.trim();
+            const nisn = document.getElementById('nisn').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telp = document.getElementById('telp').value.trim();
+            const tglLahir = document.getElementById('tglLahir').value.trim();
+            const jenisKelamin = document.getElementById('jenisKelamin').value;
+            const program = document.getElementById('program').value;
+
+            if (!nama || !nisn || !email || !telp || !tglLahir || !jenisKelamin || !program) {
+                alert('⚠️ Semua bidang harus diisi dengan lengkap!');
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('⚠️ Format email tidak valid!');
+                return false;
+            }
+
+            // Phone validation
+            const phoneRegex = /^[0-9+\-\s]+$/;
+            if (!phoneRegex.test(telp)) {
+                alert('⚠️ Format nomor telepon tidak valid!');
+                return false;
+            }
+
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="loading"></div> Memproses...';
+            submitBtn.disabled = true;
+
+            // Simulate processing time
+            setTimeout(() => {
+                // Generate receipt
+                const struk = document.getElementById('struk');
+                struk.innerHTML = `
+                    <div style="text-align: center; margin-bottom: 2em;">
+                        <i class="fas fa-check-circle" style="font-size: 3em; color: var(--secondary-color); margin-bottom: 0.5em;"></i>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1em;">✅ Pendaftaran Berhasil!</h3>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 1.5em; border-radius: 15px; margin-bottom: 2em;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1em;"><i class="fas fa-user"></i> Data Pendaftar</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0.5em; font-size: 0.95em;">
+                            <strong>Nama:</strong> <span>${nama}</span>
+                            <strong>NISN:</strong> <span>${nisn}</span>
+                            <strong>Email:</strong> <span>${email}</span>
+                            <strong>Telepon:</strong> <span>${telp}</span>
+                            <strong>Tanggal Lahir:</strong> <span>${new Date(tglLahir).toLocaleDateString('id-ID')}</span>
+                            <strong>Jenis Kelamin:</strong> <span>${jenisKelamin}</span>
+                            <strong>Program Studi:</strong> <span>${program}</span>
+                        </div>
+                    </div>
+                    <div style="background: var(--gradient-primary); color: white; padding: 1.5em; border-radius: 15px; text-align: center;">
+                        <h4><i class="fas fa-info-circle"></i> Langkah Selanjutnya</h4>
+                        <p style="margin: 1em 0;">Klik tombol di bawah untuk melanjutkan proses pendaftaran melalui WhatsApp dan mendapatkan informasi lebih lanjut.</p>
+                        <a href="#" id="whatsappBtn" style="background: var(--secondary-color); color: white; padding: 1em 2em; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1em;">
+                            <i class="fab fa-whatsapp"></i> Lanjutkan di WhatsApp
+                        </a>
+                    </div>
+                `;
+                
+                struk.classList.add('show');
+                struk.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Format WhatsApp message
+                const pesan = `Halo SMK Bina Informatika! 👋%0A%0A🎓 Saya ingin mendapatkan informasi lebih lanjut tentang pendaftaran PPDB 2025/2026.%0A%0A📋 *Data Pendaftar:*%0A• Nama: ${nama}%0A• NISN: ${nisn}%0A• Email: ${email}%0A• Telepon: ${telp}%0A• Tanggal Lahir: ${new Date(tglLahir).toLocaleDateString('id-ID')}%0A• Jenis Kelamin: ${jenisKelamin}%0A• Program Studi: ${program}%0A%0A🙏 Mohon informasi mengenai:%0A• Jadwal tes masuk%0A• Biaya pendaftaran%0A• Dokumen yang diperlukan%0A• Beasiswa yang tersedia%0A%0ATerima kasih! 😊`;
+
+                const nomorWA = '6289617354862';
+                const urlWA = `https://wa.me/${nomorWA}?text=${pesan}`;
+
+                // Add click event to WhatsApp button
+                document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open(urlWA, '_blank');
+                });
+
+            }, 2000);
+
+            return false;
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero img');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add typing effect to running text
+        const runningText = document.querySelector('.running-text');
+        if (runningText) {
+            runningText.addEventListener('animationiteration', () => {
+                runningText.style.color = `hsl(${Math.random() * 360}, 70%, 50%)`;
+            });
+        }
+
+        // Add click effects to buttons
+        document.querySelectorAll('button, .button, .cta-button, .game-link').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = e.clientX - e.target.offsetLeft + 'px';
+                ripple.style.top = e.clientY - e.target.offsetTop + 'px';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.content, .hero, .program, .extracurricular').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add loading animation on page load
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Initial page load animation
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease-in-out';
+    </script>
+</body>
+</html>
